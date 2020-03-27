@@ -1,13 +1,14 @@
 
 node {
     // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
-    def server = Artifactory.server "artifactory"
+    //def server = Artifactory.server "artifactory"
+    def server = Artifactory.server "workShopArtifactory"
     // Create an Artifactory Maven instance.
     def rtMaven = Artifactory.newMavenBuild()
     def buildInfo
     
- rtMaven.tool = "maven"
-
+ //rtMaven.tool = "maven"
+rtMaven.tool = "workShopMaven"
     stage('Clone sources') {
         git url: 'https://github.com/duorg/webapp.git'
     }

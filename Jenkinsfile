@@ -27,6 +27,7 @@ rtMaven.tool = "workShopMaven"
 
     stage('Publish build info') {
         server.publishBuildInfo buildInfo
+	    jiraSendBuildInfo branch: '', site: 'learningdevops.atlassian.net'
     }
     }
 	 

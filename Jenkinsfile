@@ -28,9 +28,6 @@ node {
         server.publishBuildInfo buildInfo
     }
     stage('Build') {
-	    steps{
-		    echo 'Building...'
-	    }
 	    post{
 		    always{
 			    jiraSendBuildInfo site: 'learningdevops.atlassian.net'

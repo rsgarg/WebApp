@@ -21,7 +21,9 @@ node {
     }
 
     stage('Maven build') {
+        jiraSendDeploymentInfo environmentId: '', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'learningdevops.atlassian.net', state: 'in_progress'
         buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
+        jiraSendDeploymentInfo environmentId: '', environmentName: '', environmentType: 'development', serviceIds: [''], site: 'learningdevops.atlassian.net', state: 'successful'
     }
 
     stage('Publish build info') {
